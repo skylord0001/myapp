@@ -1,0 +1,135 @@
+BoxLayout1:
+
+<BoxLayout11@GridLayout>:
+    cols: 3
+    Image:
+        source: "f.jpg"
+        allow_stretch: True
+        keep_ratio: False
+    Image:
+        source: "f.jpg"
+    Image:
+        source: "f.jpg"
+
+
+<BoxLayout1>:
+    orientation: "vertical" 
+    text_size: self.size
+    id: boss
+    BoxLayout:
+        size_hint: 1, .2
+        orientation: "horizontal"
+        canvas.before:
+            Color:
+                rgb: 0, 0, 0
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        ToggleButton:
+            id: tg
+            size_hint: .3, 1
+            text: "GO TO"
+            text_size: self.size
+            valign: "middle"
+            halign: "center"
+            on_press: root.Goto(self)
+        Label:
+            size_hint: .4, 1
+            text: root.demo
+            font_size:"20sp"
+            text_size: self.size
+            valign: "middle"
+            halign: "center"
+            bold: True
+        Label:
+            size_hint: .3, 1
+            text: root.preview
+            bold: True
+            text_size: self.size
+            valign: "middle"
+            halign: "center"
+    BoxLayout:
+        id: down
+        orientation: "horizontal"
+        size_hint: 1, .8
+        canvas.before:
+            Color:
+                rgb: 1, 1, 1, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        ScrollView:
+            id: menu
+            do_scroll_x: False
+            do_scroll_y: True
+            BoxLayout:   
+                size_hint_y: None
+                height: 4000
+                text_size: self.width, None
+                id: my
+                orientation: "vertical"
+                padding: (10, 10)
+                Label:
+                    color: (0, 0, 0)
+                    text: root.hd
+                    markup: True
+                    text_size: self.size
+                    valign: "top"
+                    halign: "left"
+                Image:
+                    source: root.img1
+                    allow_stretch: True
+                    keep_ratio: False
+                    size_hint: 1, .5
+                Label:
+                    color: (0, 0, 0)
+                    text: root.text1
+                    markup: True
+                    text_size: self.size
+                    valign: "top"
+                    halign: "left"
+                Image:
+                    source: root.img2
+                    allow_stretch: True
+                    keep_ratio: False
+                Label:
+                    color: (0, 0, 0)
+                    text: root.text2 
+                    markup: True
+                    text_size: self.size
+                    valign: "top"
+                    halign: "left"               
+        BoxLayout:
+            id: options
+            orientation: "vertical"
+            size_hint: .4, 1
+            canvas.before:
+                Color:
+                    rgb: 0, 0, 0
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            Button:
+                text: "EDD"
+                text_size: self.width, None
+                valign: "top"
+                halign: "center"
+                on_press: root.a(self)
+            Button:
+                text: "ID.me"
+                text_size: self.width, None
+                valign: "top"
+                halign: "center"
+                on_press: root.b(self)
+            Button:
+                text: "PPP"
+                text_size: self.width, None
+                valign: "top"
+                halign: "center"
+                on_press: root.c(self)
+            Button:
+                text: "QOUTES"
+                text_size: self.width, None
+                valign: "top"
+                halign: "center"
+                on_press: root.d(self)
